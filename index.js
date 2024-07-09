@@ -275,7 +275,7 @@ function Mac(instance, callback) {
 
 function MacApplet(instance, end) {
   var parent = Node.path.dirname(instance.path);
-  Node.fs.mkdir(parent,
+  Node.fs.mkdir(parent, { recursive: true },
     function(error) {
       if (error) return end(error);
       var zip = Node.path.join(parent, 'sudo-prompt-applet.zip');
